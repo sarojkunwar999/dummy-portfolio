@@ -1,18 +1,20 @@
-let dropdownbutton = document.getElementsByClassName("dropdownbutton")[0];
+let dropdownbutton = document.getElementsByClassName("dropdownbutton");
+let dropdownlist = document.getElementsByClassName("dropdownlist");
 
-let dropdownlist = document.getElementsByClassName("dropdownlist")[0];
 
+Array.from(dropdownbutton).forEach(function(button, index) {
+	button.onclick = function(){
+		//open dropdown //this ko satta ma dropdownbutton lekhda ni huncha
 
-dropdownbutton.onclick = function(){
-	//open dropdown //this ko satta ma dropdownbutton lekhda ni huncha
-	
-	 if(this.className.indexOf("active")== -1){
-	 	this.classList.add("active");
-	 	dropdownlist.classList.add("active");
-	 }
-	 else{
-	 	this.classList.remove("active");
-	 	dropdownlist.classList.remove("active");
-	 	
-	 }
-}
+		 if(this.className.indexOf("active")== -1){
+		 	this.classList.add("active");
+		 	dropdownlist[index].classList.add("active");
+		 }
+		 else{
+		 	this.classList.remove("active");
+		 	dropdownlist[index].classList.remove("active");
+		 	
+		 }
+	}
+})
+
